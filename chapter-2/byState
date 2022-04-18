@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# The first awk command prepends field $4 to the entire line ($0)
+awk -F, '{
+    print $4 ", " $0
+}' $* | 
+# Sort the output alphabetically
+sort |
+# Generate structured report
+awk -F, '
+    $1 == LastState {
+        print "\t" $2
+    }
+    $1 != LastState {
+        LastState = $1
+        print $1
+        print "\t" $2
+}'

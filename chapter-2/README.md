@@ -56,3 +56,23 @@ John Daggett
 Eric Adams
 Sal Carpenter
 ```
+---
+## Using `sed` and `awk` together
+```bash
+sed -f nameState list | ./byState
+```
+Output:
+```
+ California
+         Amy Wilde
+ Massachussetts
+         Eric Adams
+         John Daggett
+         Sal Carpenter
+ Oklahoma
+         Orville Thomas
+ Pennsylvania
+         Terry Kalkas
+ Virginia
+         Alice Ford
+```
